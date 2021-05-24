@@ -7,8 +7,8 @@ class Template(TemplateView):
     template_name = 'template.html'
 
     def get_context_data(self, **kwargs):
-        cliente_id='919424865298790'
-        redirect_uri ='https://komando.aleoreina.com/'
+        cliente_id=''
+        redirect_uri =''
         url = 'https://api.instagram.com/oauth/authorize?client_id='+cliente_id+'&redirect_uri='+redirect_uri+'&response_type=code'+'&scope=user_profile'
         context = super().get_context_data(**kwargs)
         context['link'] = url
@@ -23,12 +23,13 @@ def request():
     import json
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
-    data= {'client_id':'919424865298790',
-            'client_secret':'dee2e7b9c920aa8d253cb27ffa659c72',
-            'code':'AQCFQ02C1cDJ31fiQ_AYdvtWT7-v9_nIt2-UqrFq6dYPsp70OiUAxafJqtVB0K90k6X1XoSuB_mr6vxlPpN8niL1dA3Z_FetxVhBlclOfyXo4UWa5pt7x2bXZ18EdDWJU8EBkEsHsYRWZAnWE2BANVgWJQI4xN9-bTyyK84iq2rcME7rEPxWWaTT8Ww1ykubOltllNrv919tcaG3eW2bxbzSCK4l74NMdyT4Gbmjoh_EHA',
+    data= {'client_id':'',
+            'client_secret':'',
+            'code':'',
             'grant_type':'authorization_code',
             'redirect_uri':'https://komando.aleoreina.com/',
             }
+    
     con = r.post('https://api.instagram.com/oauth/access_token',
                 data=data,
                 headers=headers,
